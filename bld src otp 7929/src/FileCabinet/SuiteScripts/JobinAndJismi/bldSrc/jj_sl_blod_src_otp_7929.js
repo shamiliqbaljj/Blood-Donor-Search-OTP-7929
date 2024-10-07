@@ -1,4 +1,24 @@
 /**
+ * /**
+ * 
+ * Client : Nill
+ * 
+ * OTP 7929 - Search through the database to find the matching blood donors
+ * 
+ * 
+ * ------------------------------------------------------------------------
+ * 
+ * Author : Jobin And Jismi IT Services
+ * 
+ * Date Created : 07 - October - 2024
+ * 
+ * Description : This script is for creating a Custom page to search through the database to find the matching blood donors
+ * 
+ * REVISION HISTORY : 1.0
+ * 
+ * 
+ * 
+ * ------------------------------------------------------------------------
  * @NApiVersion 2.1
  * @NScriptType Suitelet
  */
@@ -14,6 +34,7 @@ define(['N/ui/serverWidget'],
          */
         const onRequest = (scriptContext) => {
             if (scriptContext.request.method === 'GET') {
+                try{
                 let form = serverWidget.createForm({
                     title: 'Blood Donor',
                 });
@@ -62,6 +83,12 @@ define(['N/ui/serverWidget'],
                 });
                 scriptContext.response.writePage(form);
                 form.clientScriptModulePath = 'SuiteScripts/JobinAndJismi/bldSrc/jj_cs_bld_src_otp_7929.js';
+            }
+            catch(error)
+            {
+                log.error(error);
+            }
+            
 
         }
     }
