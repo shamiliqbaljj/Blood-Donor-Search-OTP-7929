@@ -65,6 +65,11 @@ define(['N/ui/serverWidget'],
                         text: group.text
                     });
                 });
+                form.addField({
+                    id: 'custpage_lastdonation',
+                    type: serverWidget.FieldType.DATE,
+                    label: 'Last Donation Date',
+                })
 
                 var subList = form.addSublist({
                     id: 'bloodsublist',
